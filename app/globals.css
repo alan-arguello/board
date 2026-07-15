@@ -196,6 +196,8 @@ button { font: inherit; letter-spacing: 0; }
   align-items: end;
 }
 .overview-intro h1 { font-size: 48px; line-height: 1; font-weight: 500; }
+.overview-intro-compact { align-items: center; }
+.overview-intro-compact h1 { font-size: 32px; }
 .overview-summary { padding-top: 16px; border-top: 1px solid var(--line-strong); }
 .overview-summary strong { display: block; margin-bottom: 9px; font-size: 12px; }
 .overview-summary p { max-width: 760px; color: var(--muted); font-size: 15px; }
@@ -208,6 +210,7 @@ button { font: inherit; letter-spacing: 0; }
 .commercial-kpis small { margin-top: auto; color: var(--muted); font-size: 9px; }
 
 .overview-lower { display: grid; grid-template-columns: minmax(330px, .72fr) minmax(520px, 1.28fr); gap: 58px; padding-top: 32px; }
+.overview-lower-revenue { grid-template-columns: minmax(340px, .66fr) minmax(620px, 1.34fr); padding-top: 48px; }
 .overview-lower-summary { grid-template-columns: minmax(300px, .58fr) minmax(620px, 1.42fr); gap: 72px; padding-top: 64px; }
 .overview-conclusion { padding-top: 16px; border-top: 2px solid var(--green); }
 .overview-conclusion span { color: var(--muted); font-size: 9px; font-weight: 650; }

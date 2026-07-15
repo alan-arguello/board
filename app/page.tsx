@@ -157,23 +157,15 @@ export default function Home() {
 
       <section className="report-section report-slide overview" id="overview">
         <SlideNumber number={1} />
-        <div className="overview-intro">
-          <div>
-            <p className="context-line">Business review · marzo-julio de 2026</p>
-            <h1>Torrenegra &amp; Co</h1>
-          </div>
+        <div className="overview-intro overview-intro-compact">
+          <div><h1>Resumen ejecutivo</h1></div>
           <div className="overview-summary">
-            <strong>Resumen ejecutivo</strong>
             <p>En tres meses probamos distintas formas de convertir autoridad y acceso en un negocio de IA. Validamos atención, conversaciones y disposición a pagar por personas concretas. No validamos todavía una oferta fría y repetible.</p>
           </div>
         </div>
 
-        <div className="overview-lower overview-lower-summary">
-          <article className="overview-conclusion">
-            <span>Lectura al corte</span>
-            <strong>La autoridad abre conversaciones. Todavía no existe un motor comercial repetible.</strong>
-            <p>La evidencia separa dos realidades: Torrenegra genera confianza y acceso poco comunes, pero el alcance por sí solo no produjo una oferta que compradores desconocidos entendieran y compraran de forma consistente.</p>
-          </article>
+        <div className="overview-lower overview-lower-revenue">
+          <RevenueChart />
           <div className="overview-status">
             <h2>Qué se puso a prueba</h2>
             <div className="overview-status-grid">
@@ -305,12 +297,9 @@ export default function Home() {
           <div><p className="context-line">Economía observada</p><h2>El ingreso validó personas y relaciones, no una oferta escalable.</h2></div>
           <p>Separar el efectivo cobrado de las señales intermedias evita confundir atención, cotizaciones o pipeline con un negocio validado.</p>
         </div>
-        <div className="economics-layout">
-          <RevenueChart />
-          <div className="signal-table">
-            <div className="table-head"><span>Señal</span><span>Qué demuestra</span><span>Qué no demuestra</span></div>
-            {revenueSignals.map(([signal, proves, notProves]) => <div key={signal}><strong>{signal}</strong><p>{proves}</p><p>{notProves}</p></div>)}
-          </div>
+        <div className="signal-table">
+          <div className="table-head"><span>Señal</span><span>Qué demuestra</span><span>Qué no demuestra</span></div>
+          {revenueSignals.map(([signal, proves, notProves]) => <div key={signal}><strong>{signal}</strong><p>{proves}</p><p>{notProves}</p></div>)}
         </div>
       </section>
 
