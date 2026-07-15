@@ -1,0 +1,7 @@
+.next/
+node_modules/
+.vercel/
+.DS_Store
+*.tsbuildinfo
+npm-debug.log*
+pnpm-debug.log*
