@@ -27,42 +27,42 @@ const navItems = [
 
 const worked = [
   "Contenido que genera alcance, confianza y conversaciones.",
-  "Capacidad de convocar AI labs, founders, expertos e instituciones.",
+  "Capacidad de convocar laboratorios de IA, fundadores, expertos e instituciones.",
   "Mentorías y charlas cuando la compra es criterio o acceso.",
   "Proyectos a la medida cuando ya existe una relación de confianza.",
 ];
 
 const didNotWork = [
-  "Convertir alcance orgánico en inbound enterprise predecible.",
+  "Convertir alcance orgánico en ventas enterprise predecibles.",
   "Usar sesiones gratuitas como puente repetible hacia proyectos.",
-  "Vender cursos, assessments u outcome pricing sin un dolor urgente.",
-  "Convertir introducciones de partners en un canal con dueño y cadencia.",
+  "Vender cursos, diagnósticos o cobro por resultados sin un dolor urgente.",
+  "Convertir introducciones de aliados en un canal con dueño y cadencia.",
 ];
 
 const originSignals = [
   {
-    signal: "Charlas corporativas",
+    signal: "Charlas corporativas sobre IA",
     observed: "Nestlé y Enel contrataron a Alexander para hablar de innovación e IA; una referencia interna llegó a USD 20K.",
     proved: "Las empresas pagan por reputación, perspectiva y acceso.",
     didNotProve: "Que el mismo comprador contrataría una implementación amplia.",
   },
   {
-    signal: "Avatares de IA",
+    signal: "Venta de avatares de IA",
     observed: "Un producto visible consiguió un cliente institucional en Costa Rica, conversaciones en México y aliados interesados en venderlo.",
     proved: "Una solución que se entiende en segundos abre conversaciones más rápido.",
-    didNotProve: "Que exista el mismo pull por una consultoría general.",
+    didNotProve: "Que exista la misma demanda por una consultoría general.",
   },
   {
-    signal: "Educación",
+    signal: "Programas educativos de IA",
     observed: "Lab10/Lapis, Fundamentos AI, 30X y programas ejecutivos mostraban demanda; Alan también fue invitado como speaker.",
     proved: "Aprender IA ya era una compra reconocible en Latinoamérica.",
-    didNotProve: "Que educación, criterio e implementación tengan el mismo buyer o economics.",
+    didNotProve: "Que educación, criterio e implementación tengan el mismo comprador o modelo económico.",
   },
   {
-    signal: "Capacidad interna de IA",
-    observed: "Grupo BAL, Global66, Ontop y otras compañías buscaban AI Leads o FDEs internos; firmas como Tenex crecían alrededor de deployment.",
+    signal: "Equipos internos y firmas de implementación",
+    observed: "Grupo BAL, Global66, Ontop y otras compañías buscaban líderes internos capaces de conectar IA y negocio; firmas como Tenex crecían alrededor de la implementación.",
     proved: "Las organizaciones necesitan conectar negocio e implementación.",
-    didNotProve: "Que prefieran tercerizar esa función o comprarla mediante inbound.",
+    didNotProve: "Que las empresas prefieran tercerizar esa función o comprarla a partir de contenido.",
   },
 ];
 
@@ -70,22 +70,22 @@ const assumptions = [
   {
     title: "La implementación sería la siguiente ola",
     verdict: "Parcialmente correcta",
-    body: "Existe en enterprise y en flujos específicos. Gran parte del mercado accesible sigue comprando aprendizaje, claridad o soluciones muy concretas.",
+    body: "Existe en empresas grandes y en procesos específicos. Gran parte del mercado accesible sigue comprando aprendizaje, claridad o soluciones muy concretas.",
   },
   {
     title: "La marca reduciría la fricción de confianza",
     verdict: "Correcta, pero insuficiente",
-    body: "Abre puertas y explica por qué las personas responden. No sustituye urgencia, presupuesto, procurement ni un caso de uso claro.",
+    body: "Abre puertas y explica por qué las personas responden. No sustituye urgencia, presupuesto, un proceso de compra ni un caso de uso claro.",
   },
   {
-    title: "El alcance produciría inbound de alto valor",
+    title: "El alcance produciría ventas enterprise entrantes",
     verdict: "No validada",
     body: "La distribución creció con fuerza; el comprador dominante siguió siendo pequeño, exploratorio y temprano en su adopción.",
   },
   {
-    title: "Una oferta amplia ayudaría a descubrir el wedge",
+    title: "Una oferta amplia ayudaría a descubrir qué vender",
     verdict: "No funcionó",
-    body: "La amplitud atrajo problemas heterogéneos y dificultó repetir un comprador, un workflow y una promesa comercial.",
+    body: "La amplitud atrajo problemas heterogéneos y dificultó repetir un mismo comprador, proceso y resultado prometido.",
   },
 ];
 
@@ -107,36 +107,60 @@ const revenueSignals = [
   ["~10 llamadas desde pauta", "Los anuncios pueden producir conversaciones.", "No hubo cierres; tres prospectos declararon falta de presupuesto."],
 ];
 
-const strengths = [
-  ["Credibilidad de marca", "Las personas aceptan la conversación y las instituciones prestan atención."],
-  ["Profundidad técnica", "El equipo puede discutir producto, ingeniería, modelos, adopción y negocio."],
-  ["Distribución propia", "Contenido, newsletter y eventos generan atención sin depender totalmente de pauta."],
-  ["Acceso poco común", "Relaciones con AI labs, founders, researchers e instituciones."],
-  ["Puente regional", "Capacidad para traducir lo que ocurre en Silicon Valley a problemas latinoamericanos."],
+const negativeEvidence = [
+  {
+    label: "Oferta",
+    title: "No existe una venta repetible",
+    body: "Ningún comprador nuevo adquirió dos veces la misma solución y no hay ingresos recurrentes demostrados.",
+  },
+  {
+    label: "Comprador",
+    title: "La mayor parte de la demanda llega antes del presupuesto",
+    body: "75% de quienes declararon su etapa comercial están sin ingresos o por debajo de USD 500K.",
+  },
+  {
+    label: "Ingreso",
+    title: "Lo cobrado sigue ligado a personas y relaciones",
+    body: "Los proyectos llegaron por relaciones de Alan; las demás compras monetizaron principalmente acceso o criterio de Alexander.",
+  },
+  {
+    label: "Capacidad",
+    title: "La venta enterprise y a gobierno todavía no está probada",
+    body: "Hay acceso inicial, pero no un proceso repetible para abrir la cuenta, encontrar un responsable, pasar compras y cerrar.",
+  },
+  {
+    label: "Aprendizaje",
+    title: "Se cambiaron demasiadas variables al mismo tiempo",
+    body: "Cursos, eventos, diagnósticos, consultoría, pilotos y precios no aislaron un mismo comprador, problema y promesa.",
+  },
 ];
 
-const gaps = [
-  ["Venta enterprise", "Todavía no existe un proceso probado de cuentas, champion, procurement y cierre."],
-  ["B2G", "Hay acceso inicial, pero no capability probado para contratación pública y ciclos políticos."],
-  ["Wedge y casos", "No hay dos clientes comparables con el mismo problema, solución y antes/después."],
-  ["Delivery a escala", "El bench y la repetibilidad operativa no se han probado en contratos grandes."],
-  ["Dependencia de personas", "La confianza y el ingreso siguen muy ligados a Alan y Alexander."],
-];
-
-const antiCase = [
-  ["No hay repetibilidad", "Ningún desconocido compró dos veces la misma oferta; no existe revenue recurrente demostrado."],
-  ["Distribución y comprador no coinciden", "La audiencia responde, pero la mayoría capturada tiene economics pequeños o está explorando."],
-  ["La marca sigue atada a personas", "Los proyectos llegaron por relaciones de Alan; el resto monetizó principalmente acceso a Alexander."],
-  ["La categoría se llena rápido", "Saber de IA se está volviendo una credencial básica, no una propuesta de valor suficiente."],
-  ["El aprendizaje se diluyó", "Consultoría, cursos, summit, assessments, pilotos y pricing cambiaron demasiado rápido para aislar una señal."],
-];
-
-const investCase = [
-  ["Tres meses no son un ciclo enterprise", "El periodo sí refuta el inbound automático; no basta para refutar una venta de seis a doce meses."],
-  ["La autoridad es real", "OpenAI, el Consulado, Fedesoft y líderes relevantes aceptaron construir espacios junto al equipo."],
-  ["La distribución es difícil de copiar", "El contenido alcanza y se republica fuera de los canales propios."],
-  ["El mercado paga por outcomes concretos", "Un partner de McKinsey describió demanda al regalar diagnóstico o research y cobrar contra el outcome; Tenex muestra un patrón comparable."],
-  ["Existen leads con escala", "El Gobierno de El Salvador y otras instituciones sí tienen operaciones y problemas de tamaño suficiente."],
+const positiveEvidence = [
+  {
+    label: "Confianza",
+    title: "La profundidad técnica sí abre puertas",
+    body: "El Gobierno de El Salvador buscó la conversación por credibilidad técnica; Fedesoft llegó por el contenido.",
+  },
+  {
+    label: "Distribución",
+    title: "La atención propia es real y difícil de copiar",
+    body: "Contenido, newsletter, YouTube y eventos generan alcance y republicación sin depender por completo de pauta.",
+  },
+  {
+    label: "Acceso",
+    title: "El equipo convoca actores poco accesibles",
+    body: "OpenAI, el Consulado, Fedesoft, fundadores, investigadores e instituciones aceptaron construir espacios junto al equipo.",
+  },
+  {
+    label: "Tiempo",
+    title: "Los experimentos enterprise apenas comenzaron",
+    body: "Fedesoft, eventos institucionales y aliados comerciales entraron en prueba en julio; tres meses no cubren un ciclo enterprise completo.",
+  },
+  {
+    label: "Mercado",
+    title: "Sí existe compra cuando el resultado es concreto",
+    body: "McKinsey y Tenex muestran demanda por resultados medibles; el dato no valida todavía que Torrenegra pueda capturarla.",
+  },
 ];
 
 const leadQuotes = [
@@ -170,8 +194,8 @@ export default function Home() {
             <h2>Qué se puso a prueba</h2>
             <div className="overview-status-grid">
               <article><strong>Funcionó</strong><p>Contenido, acceso institucional y compras ligadas a relaciones o personas reconocidas.</p></article>
-              <article><strong>No funcionó</strong><p>Convertir alcance, sesiones gratuitas, cursos u outcome pricing en una venta fría repetible.</p></article>
-              <article><strong>En validación</strong><p>Fedesoft, eventos institucionales y aliados enterprise comenzaron apenas en julio.</p></article>
+              <article><strong>No funcionó</strong><p>Convertir alcance, sesiones gratuitas, cursos o cobro por resultados en una venta fría repetible.</p></article>
+              <article><strong>En validación</strong><p>Fedesoft, eventos institucionales y aliados comerciales comenzaron apenas en julio.</p></article>
             </div>
           </div>
         </div>
@@ -180,11 +204,11 @@ export default function Home() {
       <section className="report-section report-slide" id="origin">
         <SlideNumber number={2} />
         <div className="section-heading split-heading">
-          <div><p className="context-line">Por qué comenzamos</p><h2>La tesis original tenía señales reales. El error fue asumir que probaban la misma compra.</h2></div>
-          <p>Charlas, educación, productos visibles, roles internos de IA y firmas de deployment son mercados relacionados, pero tienen compradores, riesgos, ciclos y economics diferentes.</p>
+          <div><p className="context-line">Por qué comenzamos</p><h2>Cuatro señales distintas hicieron razonable lanzar Torrenegra &amp; Co.</h2></div>
+          <p>Antes de marzo observamos compras reales alrededor de IA. Cada señal validaba un mercado distinto; ninguna demostraba por sí sola demanda por una consultoría general de implementación.</p>
         </div>
         <div className="origin-table">
-          <div className="origin-head"><span>Señal previa</span><span>Qué observamos</span><span>Qué sí probaba</span><span>Qué no probaba</span></div>
+          <div className="origin-head"><span>Señal observada antes de lanzar</span><span>Evidencia concreta</span><span>Qué validaba</span><span>Qué todavía no validaba</span></div>
           {originSignals.map((item) => (
             <article key={item.signal}><h3>{item.signal}</h3><p>{item.observed}</p><p>{item.proved}</p><p>{item.didNotProve}</p></article>
           ))}
@@ -195,7 +219,7 @@ export default function Home() {
         <SlideNumber number={3} />
         <div className="section-heading split-heading">
           <div><p className="context-line">Hipótesis iniciales</p><h2>La marca sí abre la puerta. No crea por sí sola urgencia, presupuesto ni claridad de compra.</h2></div>
-          <p>La diferencia entre una hipótesis correcta y un negocio es la repetibilidad. Estas son las cuatro ideas que realmente se pusieron a prueba.</p>
+          <p>Una señal de mercado solo se convierte en negocio cuando la misma compra se repite. Estas son las cuatro ideas que realmente se pusieron a prueba.</p>
         </div>
         <div className="assumption-list">
           {assumptions.map((item) => (
@@ -211,8 +235,8 @@ export default function Home() {
       <section className="report-section report-slide" id="timeline">
         <SlideNumber number={4} />
         <div className="section-heading split-heading">
-          <div><p className="context-line">Mes a mes</p><h2>Cada iteración aumentó atención, autoridad o conversaciones. Ninguna produjo todavía un motion repetible.</h2></div>
-          <p>“Mes 3” no significa que el canal enterprise haya sido validado. Fedesoft, eventos institucionales y socios comerciales apenas comenzaron a probarse en julio.</p>
+          <div><p className="context-line">Mes a mes</p><h2>Cada mes generó más atención y conversaciones. Todavía no una forma repetible de vender.</h2></div>
+          <p>“Mes 3” no significa que la venta a empresas grandes haya sido validada. Fedesoft, eventos institucionales y socios comerciales apenas comenzaron a probarse en julio.</p>
         </div>
         <ExperimentTimeline />
       </section>
@@ -220,7 +244,7 @@ export default function Home() {
       <section className="report-section report-slide" id="experiments">
         <SlideNumber number={5} />
         <div className="section-heading split-heading">
-          <div><p className="context-line">Registro de experimentos</p><h2>Probamos precio, formato, buyer y canal. El resultado más claro fue qué no basta.</h2></div>
+          <div><p className="context-line">Registro de experimentos</p><h2>Probamos distintos precios, formatos, compradores y canales. Ninguno produjo una oferta repetible.</h2></div>
           <p>Interés, aplicaciones, cotizaciones y pipeline se muestran como señales intermedias. Solo se llama venta al efectivo cobrado.</p>
         </div>
         <div className="experiment-register">
@@ -234,8 +258,8 @@ export default function Home() {
       <section className="report-section report-slide audience-section" id="audience">
         <SlideNumber number={6} />
         <div className="section-heading split-heading">
-          <div><p className="context-line">Qué nos dijo la audiencia</p><h2>Hay curiosidad y búsqueda de claridad. No hay un único workflow urgente compartido por todos.</h2></div>
-          <p>Las vistas combinan formularios, sesiones y eventos solo cuando las preguntas son comparables. Cada gráfico muestra su propio denominador para no fabricar un “n” único.</p>
+          <div><p className="context-line">Qué nos dijo la audiencia</p><h2>La audiencia sí incluye decisores, pero llega temprano y con problemas distintos.</h2></div>
+          <p>Consolidamos 1,937 contactos únicos de cinco fuentes. Perfil, facturación y adopción combinan respuestas comparables; retos y países conservan su propia unidad de análisis.</p>
         </div>
         <AudienceExplorer />
       </section>
@@ -243,15 +267,16 @@ export default function Home() {
       <section className="report-section report-slide voices-section" id="voices">
         <SlideNumber number={7} />
         <div className="section-heading split-heading">
-          <div><p className="context-line">Quotes de leads y conversaciones</p><h2>La pregunta que más se repite no es técnica. Es: “¿voy bien?”</h2></div>
-          <p>Las personas se acercan por confianza y profundidad técnica. Lo que traen, sin embargo, suele ser incertidumbre antes que un caso de uso listo para comprar.</p>
+          <div><p className="context-line">Qué dijeron leads y aliados</p><h2>La profundidad técnica abre la puerta. La necesidad más repetida es claridad.</h2></div>
+          <p>El Salvador explica por qué llegan las conversaciones de mayor escala; los demás quotes muestran el problema que aparece con mayor frecuencia una vez abierta la puerta.</p>
         </div>
         <div className="voices-layout">
           <article className="voice-feature">
-            <span>Por qué se acercaron</span>
-            <blockquote>“He visto el ecosistema que tienen. Quería entender hacia dónde estaban apuntando, qué estaban haciendo y explorar si existe una posibilidad de hacer algo.”</blockquote>
-            <footer>Equipo técnico de Presidencia de El Salvador · conversación inicial</footer>
-            <p>En la misma conversación dijeron que “expertos como tal no hay” y distinguieron entre intención, POC e implementaciones bien hechas. La credibilidad percibida sí está abriendo puertas.</p>
+            <span>Por qué El Salvador abrió la conversación</span>
+            <h3>Buscaban instituciones y aliados tecnológicos con quienes colaborar. Al revisar el ecosistema, percibieron a Torrenegra como un equipo con mayor profundidad técnica.</h3>
+            <blockquote>“Sabemos que esto es nuevo, que expertos como tal no hay; hay gente con intenciones, POCs o implementaciones, unas mejor hechas que otras.”</blockquote>
+            <footer>Equipo de asesores técnicos de Presidencia de El Salvador · conversación inicial</footer>
+            <p>No llegaron buscando una capacitación. Llegaron evaluando con quién podían explorar e implementar.</p>
           </article>
           <div className="voice-list">
             <header><span>Qué buscan resolver</span><small>Expresiones textuales en entrevistas, formularios y sesiones</small></header>
@@ -265,11 +290,11 @@ export default function Home() {
       <section className="report-section report-slide" id="market">
         <SlideNumber number={8} />
         <div className="section-heading split-heading">
-          <div><p className="context-line">Lectura de etapa</p><h2>Torrenegra es fuerte antes de que aparezca el presupuesto.</h2></div>
-          <p>El contenido atrae cuando las personas descubren, aprenden y buscan claridad. La economía de una implementación exige que ya exista un proceso costoso, un dueño, datos y urgencia.</p>
+          <div><p className="context-line">Etapa de compra</p><h2>Captamos a la audiencia antes de que exista un proyecto listo para comprar.</h2></div>
+          <p>El contenido atrae durante descubrimiento, aprendizaje y búsqueda de claridad. Una implementación grande aparece después: cuando ya existen un proceso costoso, un dueño, datos, urgencia y presupuesto.</p>
         </div>
         <MarketStageChart />
-        <div className="market-takeaway"><strong>La demanda existe, pero llega temprano.</strong><p>La mayor audiencia está en las etapas 0 a 2. Los contratos de implementación viven principalmente en las etapas 3 y 4.</p></div>
+        <div className="market-takeaway"><strong>El volumen está en educación y claridad.</strong><p>Los contratos de mayor valor aparecen en las etapas 3 y 4, cuando la empresa ya puede nombrar el proceso, el costo y el responsable.</p></div>
       </section>
 
       <section className="report-section report-slide distribution-section" id="distribution">
@@ -306,21 +331,17 @@ export default function Home() {
       <section className="report-section report-slide" id="reading">
         <SlideNumber number={11} />
         <div className="section-heading split-heading">
-          <div><p className="context-line">Honestidad intelectual</p><h2>El caso para no invertir y el caso para seguir observando.</h2></div>
-          <p>Las dos lecturas pueden ser ciertas. La categoría es real y los activos son raros; eso no implica que una consultora generalista sea el vehículo correcto.</p>
+          <div><p className="context-line">Lectura honesta</p><h2>El modelo actual no es repetible. La autoridad, distribución y acceso sí son activos reales.</h2></div>
+          <p>Estas conclusiones no se contradicen: una describe el negocio que se probó; la otra, activos reales que todavía no se han convertido en un proceso comercial repetible.</p>
         </div>
-        <div className="decision-columns">
-          <article className="decision-case decision-case-negative">
-            <h3>Por qué no seguir igual</h3>
-            <div className="decision-list">{antiCase.map(([title, body]) => <div key={title}><strong>{title}</strong><p>{body}</p></div>)}</div>
-            <h4>Brechas que sostienen esta lectura</h4>
-            <div className="decision-assets">{gaps.map(([title, body]) => <div key={title}><strong>{title}</strong><p>{body}</p></div>)}</div>
+        <div className="evidence-balance">
+          <article className="evidence-case evidence-case-negative">
+            <header><span>Lo que hoy no funciona</span><h3>La consultoría general todavía no se comporta como un negocio repetible</h3></header>
+            <div className="evidence-points">{negativeEvidence.map((item, index) => <div key={item.title}><span>{String(index + 1).padStart(2, "0")}</span><small>{item.label}</small><p><strong>{item.title}</strong>{item.body}</p></div>)}</div>
           </article>
-          <article className="decision-case decision-case-positive">
-            <h3>Por qué aún puede existir una oportunidad</h3>
-            <div className="decision-list">{investCase.map(([title, body]) => <div key={title}><strong>{title}</strong><p>{body}</p></div>)}</div>
-            <h4>Activos que sostienen esta lectura</h4>
-            <div className="decision-assets">{strengths.map(([title, body]) => <div key={title}><strong>{title}</strong><p>{body}</p></div>)}</div>
+          <article className="evidence-case evidence-case-positive">
+            <header><span>Lo que sí existe</span><h3>Hay activos poco comunes que todavía no se monetizan de forma repetible</h3></header>
+            <div className="evidence-points">{positiveEvidence.map((item, index) => <div key={item.title}><span>{String(index + 1).padStart(2, "0")}</span><small>{item.label}</small><p><strong>{item.title}</strong>{item.body}</p></div>)}</div>
           </article>
         </div>
       </section>

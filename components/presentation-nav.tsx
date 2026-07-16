@@ -13,6 +13,9 @@ export function PresentationNav({ items }: { items: PresentationItem[] }) {
   const activeIndex = useMemo(() => Math.max(0, items.findIndex((item) => item.id === activeId)), [activeId, items]);
 
   useEffect(() => {
+    const requestedSlide = window.location.hash.slice(1);
+    if (items.some((item) => item.id === requestedSlide)) setActiveId(requestedSlide);
+
     const elements = items.map((item) => document.getElementById(item.id)).filter(Boolean) as HTMLElement[];
     const observer = new IntersectionObserver(
       (entries) => {
@@ -31,7 +34,10 @@ export function PresentationNav({ items }: { items: PresentationItem[] }) {
     const bounded = Math.min(Math.max(index, 0), items.length - 1);
     const item = items[bounded];
     const target = document.getElementById(item?.id);
-    if (item) setActiveId(item.id);
+    if (item) {
+      setActiveId(item.id);
+      window.history.replaceState(null, "", `#${item.id}`);
+    }
     target?.scrollIntoView({ behavior, block: "start" });
     setIsOpen(false);
   };

@@ -3,11 +3,9 @@
 import { useMemo, useState } from "react";
 import {
   adoptionStages,
-  builderStages,
+  audienceProfiles,
   challengeClusters,
   countries,
-  eventRoles,
-  organizationTypes,
   revenueBands,
   type ReportDatum,
 } from "@/lib/report-data";
@@ -25,32 +23,32 @@ const views: Array<{
   {
     key: "profile",
     label: "Perfil",
-    title: "La audiencia es amplia; el comprador enterprise no domina la entrada",
-    insight: "PyMEs, consultoras y agencias representan más de la mitad del webinar. Los eventos también atrajeron founders, estudiantes y builders en etapas tempranas.",
-    note: "Cada vista conserva su propio denominador: organizaciones n=1,222; roles del fireside n=147; etapa de Builders' Night n=136.",
+    title: "Dos de cada tres perfiles clasificados son fundadores o alta dirección",
+    insight: "El problema no es llegar únicamente a perfiles junior. La audiencia sí incluye personas con poder de decisión; el reto es que operan empresas de tamaños distintos y no comparten un mismo problema urgente.",
+    note: "Base consolidada: 1,937 contactos únicos de cinco fuentes, deduplicados por email. Fue posible clasificar el perfil de 1,930.",
   },
   {
     key: "revenue",
     label: "Facturación",
-    title: "El interés aparece antes que el presupuesto enterprise",
-    insight: "287 de 454 solicitantes declararon no tener ingresos o facturar menos de USD 100K. Solo 22 reportaron más de USD 5M.",
-    note: "n=454 aplicaciones a sesiones de estrategia. Facturación autodeclarada.",
+    title: "Tres de cada cuatro operan sin ingresos o por debajo de USD 500K",
+    insight: "457 de 607 contactos con información comparable están sin ingresos o por debajo de USD 500K. La autoridad alcanza a decisores, pero gran parte de ellos todavía no tiene presupuesto para una consultoría enterprise.",
+    note: "n=607 contactos únicos con facturación o etapa comparable en aplicaciones y eventos. Datos autodeclarados y deduplicados.",
     data: revenueBands,
   },
   {
     key: "adoption",
     label: "Adopción",
-    title: "Usar herramientas no equivale a cambiar la operación",
-    insight: "343 de 454 describieron uso individual de herramientas. Solo 42 llegaron buscando adopción a nivel de equipo.",
-    note: "n=454 aplicaciones. Clasificación sobre respuesta declarada; no es una auditoría técnica.",
+    title: "El uso se concentra en asistentes y construcción; pocos describen adopción organizacional",
+    insight: "Más de 90% de las respuestas clasificables describen uso general o técnico. Solo 64 contactos explicaron un uso claro dentro de procesos o equipos.",
+    note: "n=1,497 contactos únicos con una respuesta clasificable de uso. La clasificación es direccional y no sustituye una auditoría de adopción.",
     data: adoptionStages,
   },
   {
     key: "challenges",
     label: "Retos",
-    title: "El dolor común es eficiencia; los workflows concretos están dispersos",
+    title: "La eficiencia es el tema común; los procesos concretos son distintos",
     insight: "Eficiencia y automatización aparece en 42.5% de las respuestas, pero agrupa procesos muy distintos. Ningún flujo específico concentra por sí solo la demanda.",
-    note: "Base analizada: 1,932 descripciones de retos. Codificación multi-etiqueta; los porcentajes pueden sumar más de 100%.",
+    note: "Base consolidada: 1,932 descripciones abiertas de cinco fuentes. Codificación multi-etiqueta; los porcentajes pueden sumar más de 100%.",
     data: challengeClusters,
   },
   {
@@ -58,7 +56,7 @@ const views: Array<{
     label: "Países",
     title: "Colombia es el mercado natural de la audiencia capturada",
     insight: "Colombia concentra la mayoría de las respuestas con país explícito; México y Estados Unidos son mercados secundarios en este corte.",
-    note: "n=312 personas con país explícito en aplicaciones de estrategia e implementación.",
+    note: "n=312 contactos únicos con país explícito; 354 menciones porque algunas empresas operan en más de un país.",
     data: countries,
   },
 ];
@@ -90,7 +88,7 @@ function DonutView({ data }: { data: ReportDatum[] }) {
 
   return (
     <div className="donut-layout">
-      <div className="donut-figure" aria-label="Distribución por tipo de organización">
+      <div className="donut-figure" aria-label="Distribución consolidada por perfil">
         <svg viewBox="0 0 200 200" role="img">
           <circle className="donut-base" cx="100" cy="100" r="70" pathLength="100" />
           {data.map((item) => {
@@ -112,7 +110,7 @@ function DonutView({ data }: { data: ReportDatum[] }) {
             );
           })}
         </svg>
-        <div><strong>{total.toLocaleString("es-MX")}</strong><span>organizaciones</span></div>
+        <div><strong>{total.toLocaleString("es-MX")}</strong><span>perfiles clasificados</span></div>
       </div>
       <div className="donut-legend">
         {data.map((item) => (
@@ -129,21 +127,9 @@ function DonutView({ data }: { data: ReportDatum[] }) {
 
 function ProfileView() {
   return (
-    <div className="profile-view">
-      <div className="profile-primary">
-        <span className="chart-label">Tipo de organización · n=1,222</span>
-        <DonutView data={organizationTypes} />
-      </div>
-      <div className="profile-secondary">
-        <article>
-          <header><strong>Fireside presencial</strong><span>roles · n=147</span></header>
-          <BarView compact data={eventRoles} />
-        </article>
-        <article>
-          <header><strong>Builders&apos; Night</strong><span>etapa · n=136</span></header>
-          <BarView compact data={builderStages} />
-        </article>
-      </div>
+    <div className="profile-view profile-view-unified">
+      <span className="chart-label">Perfil consolidado de la audiencia</span>
+      <DonutView data={audienceProfiles} />
     </div>
   );
 }
@@ -160,6 +146,7 @@ export function AudienceExplorer() {
             aria-controls="audience-panel"
             aria-selected={active.key === view.key}
             className={active.key === view.key ? "is-active" : ""}
+            id={`audience-tab-${view.key}`}
             key={view.key}
             onClick={() => setActiveKey(view.key)}
             role="tab"
@@ -170,7 +157,7 @@ export function AudienceExplorer() {
         ))}
       </div>
 
-      <div className="audience-panel" id="audience-panel" role="tabpanel" aria-live="polite">
+      <div className="audience-panel" id="audience-panel" role="tabpanel" aria-labelledby={`audience-tab-${active.key}`} aria-live="polite">
         <header>
           <h3>{active.title}</h3>
           <p>{active.insight}</p>

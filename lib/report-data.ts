@@ -6,46 +6,26 @@ export type ReportDatum = {
   color?: string;
 };
 
-export const organizationTypes: ReportDatum[] = [
-  { label: "PyME / empresa en crecimiento", value: 368, display: "30.1%", color: "#143f33" },
-  { label: "Consultora / agencia", value: 294, display: "24.1%", color: "#4d7b6d" },
-  { label: "Corporativo", value: 259, display: "21.2%", color: "#d06a3b" },
-  { label: "Startup con tracción", value: 115, display: "9.4%", color: "#d9a17e" },
-  { label: "Gobierno", value: 47, display: "3.8%", color: "#8b94a2" },
-  { label: "Otro", value: 139, display: "11.4%", color: "#c9cbc6" },
-];
-
-export const eventRoles: ReportDatum[] = [
-  { label: "Founders", value: 67, display: "67" },
-  { label: "Estudiantes", value: 31, display: "31" },
-  { label: "Operadores", value: 15, display: "15" },
-  { label: "Inversionistas", value: 7, display: "7" },
-  { label: "Otros", value: 27, display: "27" },
-];
-
-export const builderStages: ReportDatum[] = [
-  { label: "Menos de USD 500K", value: 34, display: "34" },
-  { label: "MVP", value: 29, display: "29" },
-  { label: "Idea", value: 17, display: "17" },
-  { label: "Pre-revenue", value: 16, display: "16" },
-  { label: "Sin empresa", value: 11, display: "11" },
+export const audienceProfiles: ReportDatum[] = [
+  { label: "Fundadores y alta dirección", value: 1295, display: "67.1%", color: "#143f33" },
+  { label: "Managers y operadores", value: 170, display: "8.8%", color: "#4d7b6d" },
+  { label: "Builders y perfiles técnicos", value: 175, display: "9.1%", color: "#d06a3b" },
+  { label: "Estudiantes y carrera temprana", value: 41, display: "2.1%", color: "#4067a9" },
+  { label: "Otros perfiles declarados", value: 249, display: "12.9%", color: "#c9cbc6" },
 ];
 
 export const revenueBands: ReportDatum[] = [
-  { label: "Sin ingresos", value: 137, display: "137" },
-  { label: "USD 10K-100K", value: 150, display: "150" },
-  { label: "USD 100K-500K", value: 54, display: "54" },
-  { label: "USD 500K-2M", value: 53, display: "53" },
-  { label: "USD 2M-5M", value: 38, display: "38" },
-  { label: "USD 5M+", value: 22, display: "22" },
+  { label: "Sin ingresos / etapa inicial", value: 215, display: "35.4%", detail: "215 contactos" },
+  { label: "Menos de USD 500K", value: 242, display: "39.9%", detail: "242 contactos" },
+  { label: "USD 500K o más", value: 133, display: "21.9%", detail: "133 contactos" },
+  { label: "Capital levantado; ingresos no declarados", value: 17, display: "2.8%", detail: "17 contactos" },
 ];
 
 export const adoptionStages: ReportDatum[] = [
-  { label: "Usa ChatGPT, Gemini u otra herramienta", value: 201, display: "201" },
-  { label: "Usa Codex, Claude Code u OpenClaw", value: 142, display: "142" },
-  { label: "Busca adopción en el equipo", value: 42, display: "42" },
-  { label: "No usa herramientas", value: 41, display: "41" },
-  { label: "Otro", value: 28, display: "28" },
+  { label: "No usa herramientas", value: 78, display: "5.2%", detail: "78 contactos" },
+  { label: "Uso general de asistentes", value: 799, display: "53.4%", detail: "799 contactos" },
+  { label: "Construcción, código o automatización", value: 556, display: "37.1%", detail: "556 contactos" },
+  { label: "Uso declarado en procesos o equipos", value: 64, display: "4.3%", detail: "64 contactos" },
 ];
 
 export const challengeClusters: ReportDatum[] = [
@@ -60,14 +40,15 @@ export const challengeClusters: ReportDatum[] = [
 ];
 
 export const countries: ReportDatum[] = [
-  { label: "Colombia", value: 236, display: "236" },
+  { label: "Colombia", value: 234, display: "234" },
   { label: "México", value: 21, display: "21" },
   { label: "Estados Unidos", value: 17, display: "17" },
   { label: "Ecuador", value: 12, display: "12" },
   { label: "Perú", value: 10, display: "10" },
   { label: "Chile", value: 7, display: "7" },
-  { label: "Argentina", value: 6, display: "6" },
   { label: "Panamá", value: 6, display: "6" },
+  { label: "Argentina", value: 6, display: "6" },
+  { label: "Otros países", value: 38, display: "38" },
 ];
 
 export const audienceQuotes = [
